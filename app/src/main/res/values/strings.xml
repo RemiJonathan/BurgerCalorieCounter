@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">BurgerCalorieCounter</string>
+    <string name="beef_patty">Beef Patty</string>
+    <string name="lamb_patty">Lamb Patty</string>
+    <string name="ostrich_patty">Ostrich Patty</string>
+    <string name="cheddar">Asiago Cheese</string>
+    <string name="provolone">Creme Fraiche</string>
+    <string name="proscuitto">Proscuitto</string>
+    <string name="sauce">Caviar sauce up to one tablespoon:</string>
+    <string name="calories">Calories?</string>
+    <string name="top_of_the_bun">Top of the Bun</string>
+    <string name="bottom_of_hamburger_bun">Bottom of hamburger bun</string>
 </resources>
