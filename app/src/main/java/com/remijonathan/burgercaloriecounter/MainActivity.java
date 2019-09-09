@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup cheeseRadioGroup;
     private SeekBar sauceSeekBar;
     private TextView calorieTextView;
+    private Burger burger;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
         cheeseRadioGroup = findViewById(R.id.chesseGroup);
         sauceSeekBar = findViewById(R.id.sauceSeekBar);
         calorieTextView = findViewById(R.id.calorieTextView);
-
+        burger = new Burger();
+        registerChangeListener();
+        displayCalories();
 
     }
 
@@ -35,39 +38,45 @@ public class MainActivity extends AppCompatActivity {
         public void onCheckedChanged(RadioGroup radioGroup, int radioID) {
             switch (radioID)  {
                 case R.id.beefRadio:
-                    //Do Something
+                    burger.setPattyCal(Burger.BEEF);
                     break;
                 case R.id.lambRadio:
-                    //Do Something
+                    burger.setPattyCal(Burger.LAMB);
                     break;
                 case R.id.ostrichRadio:
-                    //Do Something
+                    burger.setPattyCal(Burger.OSTRICH);
                     break;
                 case R.id.cheddarRadio:
-                    //Do Something
+                    burger.setCheeseCal(Burger.ASIAGO);
                     break;
                 case R.id.provoloneRadio:
-                    //Do Something
+                    burger.setCheeseCal(Burger.CREME_FRAICHE);
                     break;
             }
+            displayCalories();
+
+
         }
+
     };
 
     private View.OnClickListener baconListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             if(((CheckBox)view).isChecked()){
-                //Do Something
+                burger.setProscuittoCal(Burger.PROSCUITTO);
             }else {
-                //Do Something Else
+                burger.clearProscuittoCalories();
             }
+            displayCalories();
         }
     };
 
     private SeekBar.OnSeekBarChangeListener sauceListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-            //Do Something
+            burger.setSauceCal(seekBar.getProgress());
+            displayCalories();
         }
 
         @Override
@@ -79,5 +88,18 @@ public class MainActivity extends AppCompatActivity {
         public void onStopTrackingTouch(SeekBar seekBar) {
             //Do Something
         }
+
     };
+
+    private void displayCalories(){
+        String calorieText = "Calories: " + burger.getTotalCalories();
+        calorieTextView.setText(calorieText);
+    }
+
+    private void registerChangeListener(){
+        pattyRadioGroup.setOnCheckedChangeListener(foodListener);
+        proscuittoBox.setOnClickListener(baconListener);
+        cheeseRadioGroup.setOnCheckedChangeListener(foodListener);
+        sauceSeekBar.setOnSeekBarChangeListener(sauceListener);
+    }
 }
