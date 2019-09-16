@@ -113,8 +113,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sauceStatusTextView"
-                android:layout_alignLeft="@id/chesseGroup"
-                android:layout_alignRight="@id/chesseGroup" />
+                android:layout_alignStart="@id/chesseGroup"
+                android:layout_alignEnd="@id/chesseGroup" />
         </RelativeLayout>
     </RelativeLayout>
 
