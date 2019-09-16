@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/top_of_the_bun"
-        android:paddingTop="50dp"
+        android:paddingTop="16dp"
         app:srcCompat="@drawable/topbun" />
 
     <RelativeLayout
