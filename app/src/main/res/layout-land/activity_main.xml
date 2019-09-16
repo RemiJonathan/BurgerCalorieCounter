@@ -15,109 +15,128 @@
         android:contentDescription="@string/top_of_the_bun"
         android:paddingTop="50dp"
         app:srcCompat="@drawable/topbun" />
-<RelativeLayout
-    android:id="@+id/left_block"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/topBun">
-    <RadioGroup
-        android:id="@+id/meatGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:layout_centerHorizontal="true">
-
-        <RadioButton
-            android:id="@+id/beefRadio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/beef_patty" />
-
-        <RadioButton
-            android:id="@+id/lambRadio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/lamb_patty" />
-
-        <RadioButton
-            android:id="@+id/ostrichRadio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ostrich_patty" />
-
-
-    </RadioGroup>
-
-    <CheckBox
-        android:id="@+id/proscuittoCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/meatGroup"
-        android:layout_centerHorizontal="true"
-        android:text="@string/proscuitto" />
-</RelativeLayout>
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/input_group"
         android:layout_below="@id/topBun"
-        android:layout_toRightOf="@id/left_block"
-        >
-    <RadioGroup
-        android:id="@+id/chesseGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_centerHorizontal="true">
-
-        <RadioButton
-            android:id="@+id/cheddarRadio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/cheddar" />
-
-        <RadioButton
-            android:id="@+id/provoloneRadio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/provolone" />
-
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/sauceStatusTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/chesseGroup"
         android:layout_centerHorizontal="true"
-        android:text="@string/sauce"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <SeekBar
+        <RelativeLayout
+            android:id="@+id/left_block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="32sp"
+            android:paddingEnd="32sp"
+            >
 
-        android:id="@+id/sauceSeekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sauceStatusTextView"
-        android:layout_alignLeft="@id/chesseGroup"
-        android:layout_alignRight="@id/chesseGroup" />
+            <RadioGroup
+                android:id="@+id/meatGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true">
+
+                <RadioButton
+                    android:id="@+id/beefRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/beef_patty" />
+
+                <RadioButton
+                    android:id="@+id/lambRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lamb_patty" />
+
+                <RadioButton
+                    android:id="@+id/ostrichRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ostrich_patty" />
+
+
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/proscuittoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/meatGroup"
+                android:layout_centerHorizontal="true"
+                android:text="@string/proscuitto" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/left_block"
+            android:paddingStart="32sp"
+            android:paddingEnd="32sp">
+
+            <RadioGroup
+                android:id="@+id/chesseGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true">
+
+                <RadioButton
+                    android:id="@+id/cheddarRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/cheddar" />
+
+                <RadioButton
+                    android:id="@+id/provoloneRadio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/provolone" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/sauceStatusTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chesseGroup"
+                android:layout_centerHorizontal="true"
+                android:text="@string/sauce"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <SeekBar
+
+                android:id="@+id/sauceSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sauceStatusTextView"
+                android:layout_alignLeft="@id/chesseGroup"
+                android:layout_alignRight="@id/chesseGroup" />
+        </RelativeLayout>
     </RelativeLayout>
+
     <ImageView
         android:id="@+id/bottomBun"
-        android:contentDescription="@string/bottom_of_hamburger_bun"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/calorieTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-90dp"
+        android:contentDescription="@string/bottom_of_hamburger_bun"
+        android:paddingBottom="-50sp"
+        android:scaleType="matrix"
         app:srcCompat="@drawable/bottombun" />
 
     <TextView
         android:id="@+id/calorieTextView"
+        android:layout_below="@id/input_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="200dp"
         android:text="@string/calories"
         android:textSize="30sp" />
 </RelativeLayout>
